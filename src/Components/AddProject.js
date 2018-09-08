@@ -14,15 +14,15 @@ class AddProject extends Component {
         categories: ['Fruits', 'Vegetables', 'Breakfast', 'Meat', 'Seafood', 'Frozen', 'Pets', 'Baking', 'Snacks', 'Bakery', 'Pasta & Rice', 'Cans & Jars', 'Refrigerated', 'Seasoning', 'Sauces, Oils & Condiments', 'Drinks', 'Paper Products', 'Cleaning', 'Personal Care', 'Misc. Items']
     }
     handleSubmit(e){
-        if(this.refs.product.value === ''){
-            alert('Product is required')
+        if(this.refs.title.value === ''){
+            alert('Title is required')
         }else{
             this.setState({newProject:{
                 id: uuid.v4(),
-                product: this.refs.product.value,
+                title: this.refs.title.value,
                 category: this.refs.category.value
             }}, function(){
-                //console.log(this.refs.product);
+                //console.log(this.refs.title);
                this.props.addProject(this.state.newProject); 
             });
         }
@@ -39,8 +39,8 @@ class AddProject extends Component {
         <h3>Grocery List</h3>
         <form onSubmit={this.handleSubmit.bind(this)}>
             <div>
-                <label>Product</label><br />
-                <input type="text" ref="product" />
+                <label>Title</label><br />
+                <input type="text" ref="title" />
             </div>
             <div>
                 <label>Category</label><br />

@@ -13,84 +13,87 @@ class App extends Component {
       projects: [],
     }
   }
-
-  
+    componentDidMount() {
+      fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(data => this.setState({projects:data}));
+    }
 
   getProjects(){
     this.setState({
       projects: [
         {
           id: uuid.v4(),
-          product: 'Milk',
+          title: 'Milk',
           category: 'Refrigerated'
         },
         {
           id: uuid.v4(),
-          product: 'Eggs',
+          title: 'Eggs',
           category: 'Refrigerated'
         },
         {
           id: uuid.v4(),
-          product: 'Coffee',
+          title: 'Coffee',
           category: 'Drinks'
         }, 
         {
           id: uuid.v4(),
-          product: 'Grapes',
+          title: 'Grapes',
           category: 'Fruits'
         }, 
         {
           id: uuid.v4(),
-          product: 'Apples',
+          title: 'Apples',
           category: 'Fruits'
         }, 
         {
           id: uuid.v4(),
-          product: 'Oranges',
+          title: 'Oranges',
           category: 'Fruits'
         }, 
         {
           id: uuid.v4(),
-          product: 'Dishwasher Soap',
+          title: 'Dishwasher Soap',
           category: 'Cleaning'
         }, 
         {
           id: uuid.v4(),
-          product: 'Can Veggies',
+          title: 'Can Veggies',
           category: 'Cans & Jars'
         }, 
         {
           id: uuid.v4(),
-          product: 'Cereal',
+          title: 'Cereal',
           category: 'Breakfast'
         }, 
         {
           id: uuid.v4(),
-          product: 'Shampoo',
+          title: 'Shampoo',
           category: 'Personal Care'
         }, {
           id: uuid.v4(),
-          product: 'Loaf Bread',
+          title: 'Loaf Bread',
           category: 'Bakery'
         }, 
         {
           id: uuid.v4(),
-          product: 'Dog Food',
+          title: 'Dog Food',
           category: 'Pets'
         }, 
         {
           id: uuid.v4(),
-          product: 'Sugar',
+          title: 'Sugar',
           category: 'Baking'
         }, 
         {
           id: uuid.v4(),
-          product: 'Flour',
+          title: 'Flour',
           category: 'Bakng'
         }, 
         {
           id: uuid.v4(),
-          product: 'Olive Oil',
+          title: 'Olive Oil',
           category: 'Sauces Oils & Condiments'
         }
       ]});
